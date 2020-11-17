@@ -27,10 +27,14 @@ impl HasArea for Square {
     }
 }
 
+//这种写法就是类似泛型的写法
 fn print_area<T: HasArea>(shape: T) {
     println!("This shape has an area of {}", shape.area());
 }
 
 fn main() {
-
+    let c = Circle { x: 1.0, y: 1.0, radius: 1.0 };
+    print_area(c);
+    let s = Square { x: 1.0, y: 1.0, side: 1.0 };
+    print_area(s);
 }
